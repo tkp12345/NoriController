@@ -3,9 +3,9 @@
 
 
 
-*화면을 클릭하면 영상이 실행됩니다.
+*사진을 클릭하면 영상이 실행됩니다.
 
-[![Nori Controller Video](https://img.youtube.com/vi/t_fK7xvhH1s/0.jpg )](https://www.youtube.com/watch?v=t_fK7xvhH1s)
+[![Nori Controller Video](https://img.youtube.com/vi/WPgMmYe8V9c/0.jpg )](https://www.youtube.com/watch?v=WPgMmYe8V9c)
 
 
 "https://www.youtube.com/watch?v=t_fK7xvhH1s"
