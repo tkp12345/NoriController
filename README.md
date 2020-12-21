@@ -8,4 +8,4 @@
 [![Nori Controller Video](https://img.youtube.com/vi/WPgMmYe8V9c/0.jpg )](https://www.youtube.com/watch?v=WPgMmYe8V9c)
 
 
-"https://www.youtube.com/watch?v=t_fK7xvhH1s"
+url : "https://www.youtube.com/watch?v=WPgMmYe8V9c"
