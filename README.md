@@ -16,5 +16,5 @@
 [![Nori Controller Video](https://img.youtube.com/vi/WPgMmYe8V9c/0.jpg )](https://www.youtube.com/watch?v=WPgMmYe8V9c)
 
 
-## 시현영상 url : "https://www.youtube.com/watch?v=WPgMmYe8V9c"
-## 상세설명 url : "https://www.youtube.com/watch?v=t_fK7xvhH1s"
+## 시현영상 (youtube) : "https://www.youtube.com/watch?v=WPgMmYe8V9c"
+## 상세설명 (youtube) : "https://www.youtube.com/watch?v=t_fK7xvhH1s"
