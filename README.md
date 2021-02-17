@@ -1,6 +1,6 @@
 # NoriController
 
-제작인원 : 2명
+제작인원 : 2명 (졸업작품)
 
 ------------------
 
@@ -16,5 +16,5 @@
 [![Nori Controller Video](https://img.youtube.com/vi/WPgMmYe8V9c/0.jpg )](https://www.youtube.com/watch?v=WPgMmYe8V9c)
 
 
-## 시영상 (youtube) : "https://www.youtube.com/watch?v=WPgMmYe8V9c"
+## 시연영상 (youtube) : "https://www.youtube.com/watch?v=WPgMmYe8V9c"
 ## 상세설명 (youtube) : "https://www.youtube.com/watch?v=t_fK7xvhH1s"
