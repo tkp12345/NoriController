@@ -20,18 +20,22 @@
 ## 상세설명 (youtube) : "https://www.youtube.com/watch?v=t_fK7xvhH1s"
 
 
+</br>
+</br>
 
 
 코드리뷰 
 ---------------------- 
-1.카메라센서 
-   -카메라 송수신(라즈베리파이(클라이언트) ---->  윈도우프로그램(서버))
-   -카메라 키설정 
-2.윈도우프로그램 UI 
-   
+```
+### 1.카메라센서 
+###    -카메라 송수신(라즈베리파이(클라이언트) ---->  윈도우프로그램(서버))
+###    -카메라 키설정 
+### 2.윈도우프로그램 UI 
+```
+ 
 
 
-## -카메라 송수신
+### -카메라 송수신
 
  #### __IRCameraServer.py__
  
@@ -92,8 +96,8 @@
 			time.sleep(0.001)
    ```
    
-  ## -카메라 키설정 
-   ####__CamerakeyInput.py__
+  ### -카메라 키설정 
+  #### __CamerakeyInput.py__
    ```
     class IRCameraConnecting(threading.Thread):
           ...
@@ -154,3 +158,75 @@
             cv2.waitKey(1)
             sleep(0.001)
             ```
+</br>	    
+### -윈도우프로그램 UI 
+
+ #### UI.py
+ ```
+  PyQt5의 GUI 버튼으로 컨트롤러의 버튼, 기울기, 카메라 입력에 대한 프로세스를 실행, 종료한다.
+ ```
+ 
+ ```
+ def execute_favorites(self):
+        index = self.item_index.row()  # 목록에서 선택한 커스텀의 위치를 알아내기
+        custom_id = Favorites.select_Favorites()[index][0]  # 즐겨찾기 DB의 index로 custom_id 알아내기
+        print('선택한 즐겨찾기의 기본키를 넘겨주기', custom_id)
+        try:
+            # 다른 커스텀이 실행중이라면 자이로 입력과 카메라 입력을 실행하지 않음
+            if self.button_exe or self.gyro_exe or self.camera_exe:  
+                ErrorMessage('실행중인 커스텀을 종료해주세요.')
+
+            else:
+                if ButtonData.button_memory[0]:
+                    # 프로세스 생성 후 실행
+                    self.button_input = ButtonKeyInput(custom_id, ButtonData.button_memory)
+                    self.button_input.start()
+                    self.button_exe = True
+                    print('버튼 입력 시작')
+                    OkMessage('선택한 커스텀을 실행합니다.')
+                else:
+                    print('버튼 연결 오류')
+                    ErrorMessage('커스텀 실행 중 오류가 발생했습니다.')
+
+                if GyroData.gyro_memory[0]:
+                    # 프로세스 생성 후 실행
+                    self.gyro_input = GyroKeyInput(custom_id, GyroData.gyro_memory)
+                    self.gyro_input.start()
+                    self.gyro_exe = True
+                    print('자이로 입력 시작')
+                else:
+                    print('자이로 연결 오류')
+                if IRCameraData.ir_camera_memory[0]:
+                    # 카메라 DB가 비어 있다면 프로세스를 실행하지 않음
+                    if Camera.select_Camera_eno(custom_id) != []:  
+                        # 프로세스 생성 후 실행
+                        self.camera_input = CamerakeyInput(custom_id, IRCameraData.ir_camera_memory)
+                        self.camera_input.start()
+                        self.camera_exe = True
+                        print('카메라 입력 시작')
+                else:
+                    print('카메라 연결 오류')
+        except:
+            print('즐겨찾기 실행 오류')
+            ErrorMessage('커스텀 실행 중 오류가 발생했습니다.')
+
+    def end_favorites(self):
+        try:
+            if self.button_exe:
+                self.button_input.terminate() # 프로세스 종료
+                self.button_exe = False
+                print('버튼 입력 끝내기')
+            if self.gyro_exe:
+                self.gyro_input.terminate()  # 프로세스 종료
+                self.gyro_exe = False
+                print('자이로 입력 끝내기')
+            if self.camera_exe:
+                self.camera_input.terminate()  # 프로세스 종료
+                self.camera_exe = False
+                print('카메라 입력 끝내기')
+            OkMessage('실행중인 커스텀을 종료합니다.')
+        except:
+            print('끝내기 오류')
+            ErrorMessage('커스텀 종류 중 오류가 발생했습니다.')
+	    ```
+
