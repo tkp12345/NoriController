@@ -157,11 +157,12 @@
             cv2.imshow('img_result', img_result)
             cv2.waitKey(1)
             sleep(0.001)
-            ```
+          ```
 </br>	    
 ### -윈도우프로그램 UI 
 
  #### UI.py
+ 
  ```
   PyQt5의 GUI 버튼으로 컨트롤러의 버튼, 기울기, 카메라 입력에 대한 프로세스를 실행, 종료한다.
  ```
@@ -175,7 +176,6 @@
             # 다른 커스텀이 실행중이라면 자이로 입력과 카메라 입력을 실행하지 않음
             if self.button_exe or self.gyro_exe or self.camera_exe:  
                 ErrorMessage('실행중인 커스텀을 종료해주세요.')
-
             else:
                 if ButtonData.button_memory[0]:
                     # 프로세스 생성 후 실행
@@ -228,5 +228,5 @@
         except:
             print('끝내기 오류')
             ErrorMessage('커스텀 종류 중 오류가 발생했습니다.')
-	    ```
+```
 
