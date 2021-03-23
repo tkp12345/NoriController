@@ -112,7 +112,7 @@
             hsv = hsv[0][0]
 
             threshold = cv2.getTrackbarPos('threshold', 'img_result')
-         ...
+         ..
 
             img_color=cv2.resize(img_color,(width,height) interpolation=cv2.INTER_AREA)
 
@@ -163,8 +163,10 @@
 
  #### UI.py
  
+ 
  ```
   PyQt5의 GUI 버튼으로 컨트롤러의 버튼, 기울기, 카메라 입력에 대한 프로세스를 실행, 종료한다.
+  
  ```
  
  ```
@@ -228,5 +230,5 @@
         except:
             print('끝내기 오류')
             ErrorMessage('커스텀 종류 중 오류가 발생했습니다.')
-```
+	```
 
