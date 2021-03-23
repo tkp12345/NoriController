@@ -157,8 +157,12 @@
             cv2.imshow('img_result', img_result)
             cv2.waitKey(1)
             sleep(0.001)
-          ```
-</br>	    
+```
+	  
+</br>	
+
+
+
 ### -윈도우프로그램 UI 
 
  #### UI.py
@@ -166,7 +170,6 @@
  
  ```
   PyQt5의 GUI 버튼으로 컨트롤러의 버튼, 기울기, 카메라 입력에 대한 프로세스를 실행, 종료한다.
-  
  ```
  
  ```
@@ -212,23 +215,23 @@
             print('즐겨찾기 실행 오류')
             ErrorMessage('커스텀 실행 중 오류가 발생했습니다.')
 
-    def end_favorites(self):
-        try:
-            if self.button_exe:
-                self.button_input.terminate() # 프로세스 종료
-                self.button_exe = False
-                print('버튼 입력 끝내기')
-            if self.gyro_exe:
-                self.gyro_input.terminate()  # 프로세스 종료
-                self.gyro_exe = False
-                print('자이로 입력 끝내기')
-            if self.camera_exe:
-                self.camera_input.terminate()  # 프로세스 종료
-                self.camera_exe = False
-                print('카메라 입력 끝내기')
-            OkMessage('실행중인 커스텀을 종료합니다.')
-        except:
-            print('끝내기 오류')
-            ErrorMessage('커스텀 종류 중 오류가 발생했습니다.')
-	```
+	    def end_favorites(self):
+		try:
+		    if self.button_exe:
+			self.button_input.terminate() # 프로세스 종료
+			self.button_exe = False
+			print('버튼 입력 끝내기')
+		    if self.gyro_exe:
+			self.gyro_input.terminate()  # 프로세스 종료
+			self.gyro_exe = False
+			print('자이로 입력 끝내기')
+		    if self.camera_exe:
+			self.camera_input.terminate()  # 프로세스 종료
+			self.camera_exe = False
+			print('카메라 입력 끝내기')
+		    OkMessage('실행중인 커스텀을 종료합니다.')
+		except:
+		    print('끝내기 오류')
+		    ErrorMessage('커스텀 종류 중 오류가 발생했습니다.')
+``` 
 
